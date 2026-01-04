@@ -1,9 +1,15 @@
-import { Button } from "@/components/ui/button"
- 
-export default function Home() {
+import { Button } from "@/components/ui/button";
+import { CirclePlus } from "lucide-react";
+
+const page = () => {
   return (
-    <div>
-      <Button>Click me</Button>
+    <div className="h-screen flex items-center justify-center">
+      <Button size="xl" className="rounded-full text-custom-color">
+        <CirclePlus />
+        Click me
+      </Button>
     </div>
-  )
-}
+  );
+};
+
+export default page;
