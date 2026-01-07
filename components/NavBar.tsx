@@ -12,6 +12,7 @@ import { LogOut, Moon, Settings, Sun, User } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { SidebarTrigger } from "./ui/sidebar";
 
 const NavBar = () => {
   const { setTheme } = useTheme();
@@ -19,7 +20,7 @@ const NavBar = () => {
   return (
     <nav className="p-4 flex items-center justify-between">
       {/* left-side */}
-      CollapseButton
+      <SidebarTrigger />
       {/* right-side */}
       <div className="flex items-center gap-4">
         <Link href="/">Dashboard</Link>
