@@ -18,19 +18,28 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
+  SidebarGroupAction,
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
+  SidebarMenuBadge,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
 import LogoImage from "@/public/vercel.svg";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@radix-ui/react-collapsible";
 import {
   Calendar,
+  ChevronDown,
   ChevronUp,
   Home,
   Inbox,
+  Plus,
+  Projector,
   Search,
   Settings,
   User,
@@ -96,8 +105,90 @@ const AppSideBar = () => {
                       <span>{item.title}</span>
                     </Link>
                   </SidebarMenuButton>
+                  {item.title==='Inbox' && (<SidebarMenuBadge>24</SidebarMenuBadge>)}
                 </SidebarMenuItem>
               ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Projects</SidebarGroupLabel>
+          <SidebarGroupAction>
+            <Plus /> <span className="sr-only">Add Project</span>
+          </SidebarGroupAction>
+          <SidebarGroupContent>
+            <SidebarMenu>
+            <SidebarMenuItem >
+              <SidebarMenuButton asChild>
+                <Link href='#'>
+                <Projector/> See All Projects</Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+             <SidebarMenuItem >
+              <SidebarMenuButton asChild>
+                <Link href='#'>
+                <Plus/> Add Projects</Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        {/* collabsiabl e */}
+        <Collapsible defaultOpen className="group/collapsible">
+      <SidebarGroup>
+        <SidebarGroupLabel asChild>
+          <CollapsibleTrigger>
+            Collabsiable Gropue
+            <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+          </CollapsibleTrigger>
+        </SidebarGroupLabel>
+        <CollapsibleContent>
+          <SidebarGroupContent>
+            <SidebarMenu>
+            <SidebarMenuItem >
+              <SidebarMenuButton asChild>
+                <Link href='#'>
+                <Projector/> See All Projects</Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+             <SidebarMenuItem >
+              <SidebarMenuButton asChild>
+                <Link href='#'>
+                <Plus/> Add Projects</Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </CollapsibleContent>
+      </SidebarGroup>
+    </Collapsible>
+    {/* Nested */}
+      <SidebarGroup>
+          <SidebarGroupLabel>Nested Items</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+            <SidebarMenuItem >
+              <SidebarMenuButton asChild>
+                <Link href='#'>
+                <Projector/> See All Projects</Link>
+              </SidebarMenuButton>
+              <SidebarMenuSub>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton asChild>
+                      <Link href='#'>
+                <Plus/> Add Projects</Link>
+                    </SidebarMenuSubButton>
+                    </SidebarMenuSubItem>        
+              </SidebarMenuSub>
+              <SidebarMenuSub>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton asChild>
+                      <Link href='#'>
+                <Plus/> Add Projects</Link>
+                    </SidebarMenuSubButton>
+                    </SidebarMenuSubItem>        
+              </SidebarMenuSub>
+            </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
