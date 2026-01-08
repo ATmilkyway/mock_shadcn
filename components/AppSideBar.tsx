@@ -184,7 +184,7 @@ const AppSideBar = () => {
                   <SidebarMenuSubItem>
                     <SidebarMenuSubButton asChild>
                       <Link href='#'>
-                <Plus/> Add Projects</Link>
+                <Plus/> Add Categories</Link>
                     </SidebarMenuSubButton>
                     </SidebarMenuSubItem>        
               </SidebarMenuSub>

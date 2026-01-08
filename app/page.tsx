@@ -1,15 +1,16 @@
-import { Button } from "@/components/ui/button";
-import { CirclePlus } from "lucide-react";
+import React from 'react'
 
-const page = () => {
+const HomePage = () => {
   return (
-    <div className="h-screen flex items-center justify-center">
-      <Button size="lg" className="rounded-full text-custom-color">
-        <CirclePlus />
-        Click me
-      </Button>
+    <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-4 gap-3'>
+      <div className="bg-primary-foreground p-8 rounded-lg lg:col-span-2 xl:col-end-1 2xl:col-end-2"></div>
+      <div className="bg-primary-foreground p-8 rounded-lg "></div>
+      <div className="bg-primary-foreground p-8 rounded-lg "></div>
+      <div className="bg-primary-foreground p-8 rounded-lg "></div>
+      <div className="bg-primary-foreground p-8 rounded-lg lg:col-span-2 xl:col-end-1 2xl:col-end-2"></div>
+      <div className="bg-primary-foreground p-8 rounded-lg "></div>
     </div>
-  );
-};
+  )
+}
 
-export default page;
+export default HomePage
